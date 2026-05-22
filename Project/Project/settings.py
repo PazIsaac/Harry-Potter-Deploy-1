@@ -125,7 +125,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "Api" / "static",
 ]
 
-
+# 
 import os
 MEDIA_URL='/Media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'Media')
