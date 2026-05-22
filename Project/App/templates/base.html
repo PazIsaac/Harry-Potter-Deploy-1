@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Mundo Mágico de Harry Potter</title>
+  <meta name="description"
+    content="Una experiencia visual profesional inspirada en el universo de Harry Potter. Proyecto con fines educativos." />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <canvas id="stars"></canvas>
+
+  <header class="navbar">
+    <div class="logo">HOGWARTS</div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#casas">Casas</a>
+      <a href="#personajes">Personajes</a>
+      <a href="#hechizos">Hechizos</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <div class="hero-bg" style="background-image: url('{% static "src/hero.jpg" %}');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow reveal">Bienvenido a</p>
+      <h1 class="reveal">El Mundo Mágico<br /><span class="gold">de Harry Potter</span></h1>
+      <p class="subtitle reveal">"Son nuestras decisiones, Harry, las que muestran lo que realmente somos, mucho más que
+        nuestras habilidades."</p>
+      <a href="#casas" class="btn-magic reveal">Descubre tu Casa</a>
+    </div>
+  </section>
+
+  <section id="casas" class="houses">
+    <h2 class="section-title reveal">Las Cuatro Casas</h2>
+    <p class="section-sub reveal">Cada estudiante de Hogwarts es seleccionado por el Sombrero Seleccionador y enviado a
+      una de las cuatro casas históricas.</p>
+    <div class="house-grid">
+      <article class="house gryffindor reveal">
+        <div class="crest-img"><img src="{% static 'src/gryffindor.jpg' %}" alt="Escudo de Gryffindor" loading="lazy"></div>
+        <h3>Gryffindor</h3>
+        <p>Valor, coraje y temple.</p>
+      </article>
+      <article class="house slytherin reveal">
+        <div class="crest-img"><img src="{% static 'src/slytherin.jpg' %}" alt="Escudo de Slytherin" loading="lazy"></div>
+        <h3>Slytherin</h3>
+        <p>Astucia, ambición y liderazgo.</p>
+      </article>
+      <article class="house ravenclaw reveal">
+        <div class="crest-img"><img src="{% static 'src/ravenclaw.jpg' %}" alt="Escudo de Ravenclaw" loading="lazy"></div>
+        <h3>Ravenclaw</h3>
+        <p>Inteligencia, sabiduría e ingenio.</p>
+      </article>
+      <article class="house hufflepuff reveal">
+        <div class="crest-img"><img src="{% static 'src/hufflepuff.jpg' %}" alt="Escudo de Hufflepuff" loading="lazy"></div>
+        <h3>Hufflepuff</h3>
+        <p>Lealtad, paciencia y justicia.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="personajes" class="characters">
+    <h2 class="section-title reveal">Personajes Legendarios</h2>
+    <p class="section-sub reveal">Los protagonistas que dieron vida a una de las sagas más importantes de la literatura
+      contemporánea.</p>
+    <div class="char-grid">
+      <div class="char-card reveal">
+        <div class="char-photo"><img src="{% static 'src/harry.jpg' %}" alt="Harry Potter" loading="lazy"></div>
+        <div class="char-info">
+          <h4>Harry Potter</h4>
+          <p>El niño que vivió.</p>
+        </div>
+      </div>
+      <div class="char-card reveal">
+        <div class="char-photo"><img src="{% static 'src/hermione.jpg' %}" alt="Hermione Granger" loading="lazy"></div>
+        <div class="char-info">
+          <h4>Hermione Granger</h4>
+          <p>La bruja más brillante de su generación.</p>
+        </div>
+      </div>
+      <div class="char-card reveal">
+        <div class="char-photo"><img src="{% static 'src/ron.jpg' %}" alt="Ron Weasley" loading="lazy"></div>
+        <div class="char-info">
+          <h4>Ron Weasley</h4>
+          <p>El amigo más leal.</p>
+        </div>
+      </div>
+      <div class="char-card reveal">
+        <div class="char-photo"><img src="{% static 'src/dumbledore.jpg' %}" alt="Albus Dumbledore" loading="lazy"></div>
+        <div class="char-info">
+          <h4>Albus Dumbledore</h4>
+          <p>El mago más grande de su época.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hechizos" class="spells">
+    <h2 class="section-title reveal">Hechizos Memorables</h2>
+    <p class="section-sub reveal">Haz clic en cada hechizo para invocar su poder.</p>
+    <div class="spell-grid">
+      <button class="spell reveal" data-spell="Lumos">Lumos</button>
+      <button class="spell reveal" data-spell="Expelliarmus">Expelliarmus</button>
+      <button class="spell reveal" data-spell="Wingardium Leviosa">Wingardium Leviosa</button>
+      <button class="spell reveal" data-spell="Expecto Patronum">Expecto Patronum</button>
+      <button class="spell reveal" data-spell="Alohomora">Alohomora</button>
+      <button class="spell reveal" data-spell="Avada Kedavra">Avada Kedavra</button>
+    </div>
+    <div id="spell-output" class="spell-output"></div>
+  </section>
+
+  <footer>
+    <p class="footer-title">El Mundo Mágico de Harry Potter</p>
+    <p class="disclaimer">
+      Este sitio ha sido creado únicamente con <strong>fines educativos</strong> y de práctica de desarrollo web.
+      Harry Potter y todos los personajes, nombres, lugares e indicios relacionados
+      son © y ™ de J.K. Rowling y Warner Bros. Entertainment Inc.
+      No se reclama propiedad alguna sobre dichas marcas. Sin fines comerciales.
+    </p>
+    <p class="copy">© <span id="year"></span> — Proyecto educativo</p>
+  </footer>
+
+  <script src="{% static 'scripts/main.js' %}"></script>
+</body>
+
+</html>
