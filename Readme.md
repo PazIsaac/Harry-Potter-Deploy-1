@@ -81,7 +81,7 @@ Project/
 
 ## Autor
 
-Pablo Gareis
+Paz Isaac
 
 ## Aviso Legal
 
